@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * jdbc快速入门
+ * @author zc
+ */
 public class JdbcDemo01 {
 
     public static void main(String[] args) {
