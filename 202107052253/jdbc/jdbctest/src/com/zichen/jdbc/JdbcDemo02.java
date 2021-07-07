@@ -1,5 +1,7 @@
 package com.zichen.jdbc;
 
+import com.zichen.util.JdbcUtils;
+
 import java.sql.*;
 
 /**
@@ -13,11 +15,7 @@ public class JdbcDemo02 {
         Statement stmt = null;
         ResultSet rs = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/zichen",
-                    "root",
-                    "root");
+            conn = JdbcUtils.getConnection();
             String sql = "select * from student";
             stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
@@ -27,31 +25,11 @@ public class JdbcDemo02 {
                 System.out.print(rs.getInt(3) + " ");
                 System.out.println();
             }
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             // 释放资源
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            JdbcUtils.close(conn, stmt, rs);
         }
 
     }
