@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="no" ?>
+
+<!--
+<!DOCTYPE c3p0-config [
+   <!ENTITY extra SYSTEM "https://www.mchange.com/projects/c3p0/extra.xml">
+]>
+-->
+
+<c3p0-config>
+  <!-- 可以定义多个配置 此处名为 空参(默认) 的配置文件 -->
+  <!-- 使用默认的配置读取连接池对象 -->
+  <default-config>
+    <!-- 连接参数 -->
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql:///zichen</property>
+    <property name="user">root</property>
+    <property name="password">root</property>
+
+    <!-- 连接池参数 -->
+    <!-- 初始化申请的连接数量 -->
+    <property name="initialPoolSize">5</property>
+    <!-- 最大的连接数量 -->
+    <property name="maxPoolSize">10</property>
+    <!-- 超时时间 -->
+    <property name="checkoutTimeout">3000</property>
+
+    <!-- <property name="automaticTestTable">con_test</property> -->
+    <!-- <property name="checkoutTimeout">30000</property> -->
+    <!-- <property name="idleConnectionTestPeriod">30</property> -->
+    <!-- <property name="initialPoolSize">10</property> -->
+    <!-- <property name="maxIdleTime">30</property> -->
+    <!-- <property name="maxIdleTimeExcessConnections">10</property> -->
+    <!-- <property name="maxConnectionAge">60</property> -->
+    <!-- <property name="propertyCycle">1</property> -->
+    <!-- <property name="maxPoolSize">25</property> -->
+    <!-- <property name="jdbcUrl">jdbc:postgresql://localhost/c3p0-test</property> -->
+    <!-- <property name="minPoolSize">5</property> -->
+    <!-- <property name="maxStatements">0</property> -->
+    <!-- <property name="maxStatementsPerConnection">5</property> -->
+    <!-- <property name="maxAdministrativeTaskTime">4</property> -->
+    <!-- <property name="connectionCustomizerClassName">com.mchange.v2.c3p0.test.TestConnectionCustomizer</property> -->
+    <!-- <property name="unreturnedConnectionTimeout">15</property> -->
+    <!-- <property name="debugUnreturnedConnectionStackTraces">true</property> -->
+
+    <!-- <property name="dataSourceName">poop</property> -->
+
+    <!-- <property name="driverClass">org.postgresql.Driver</property> -->
+    <!-- <property name="jdbcUrl">jdbc:postgresql://localhost/c3p0-test</property> -->
+
+    <extensions>
+      <!-- <property name="myXmlKey">myXmlVal</property> -->
+      <!-- <property name="myKey">myOverriddenVal</property> -->
+    </extensions>
+
+
+    <user-overrides user="swaldman">
+      <!--
+      <property name="unreturnedConnectionTimeout">5</property>
+      <property name="debugUnreturnedConnectionStackTraces">true</property>
+      -->
+      <!-- <property name="preferredTestQuery">select poop from doop</property> --><!-- intentionally broken -->
+    </user-overrides>
+
+ <!--   &extra; -->
+
+  </default-config>
+
+
+<!-- 可以定义多个配置 此处名为 dumbTestConfig 的配置文件 -->
+<!--
+  <named-config name="dumbTestConfig">
+    <property name="maxStatements">200</property>
+    <property name="jdbcUrl">jdbc:test</property>
+    <property name="dataSourceName">scoop</property>
+    <user-overrides user="poop">
+      <property name="maxStatements">300</property>
+    </user-overrides>
+   </named-config>
+-->
+
+</c3p0-config>
