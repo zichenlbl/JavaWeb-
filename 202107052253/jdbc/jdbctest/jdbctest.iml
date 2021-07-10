@@ -10,5 +10,7 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
     <orderEntry type="library" name="c3p0-0.9.5.5" level="project" />
     <orderEntry type="library" name="druid-1.2.6" level="project" />
+    <orderEntry type="library" name="commons-logging-1.2" level="project" />
+    <orderEntry type="library" name="spring-beans-5.3.0" level="project" />
   </component>
 </module>
