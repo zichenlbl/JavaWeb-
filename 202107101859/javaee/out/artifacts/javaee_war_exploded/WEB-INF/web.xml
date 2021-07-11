@@ -8,6 +8,9 @@
     <servlet>
         <servlet-name>demo01</servlet-name>
         <servlet-class>com.zichen.web.servlet.ServletDemo01</servlet-class>
+        <!-- 指定 Servlet 创建的时机 -->
+        <!-- 第一次访问时创建：值为负数; 服务器启动时创建：值为0或正数 -->
+        <load-on-startup>0</load-on-startup>
     </servlet>
 
     <!-- 映射访问路径 -->
