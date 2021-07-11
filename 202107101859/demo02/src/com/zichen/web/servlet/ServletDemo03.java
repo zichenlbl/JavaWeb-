@@ -1,6 +1,7 @@
 package com.zichen.web.servlet;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import java.io.IOException;
  * @author zc
  * @date 2021-07-12 0:11
  */
+@WebServlet("/demo03")
 public class ServletDemo03 extends HttpServlet {
 
     @Override
