@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author zc
  * @date 2021-07-11 22:59
  */
-@WebServlet("/demo02")
+@WebServlet("/demo01")
 public class ServletDemo01 implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
