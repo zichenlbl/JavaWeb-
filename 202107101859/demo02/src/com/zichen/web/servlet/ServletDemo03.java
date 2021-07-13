@@ -11,10 +11,11 @@ import java.io.IOException;
 /**
  * 使用 Servlet 的实现类 HttpServlet
  * HttpServlet 实现了 service 方法 并判断网络请求方式 创建了 doGet、doPost、doPut等方法
+ * 一个 Servlet 可以定义多个访问路径 "/demo03", "/demo03/test01", "*.demo", "/*"
  * @author zc
  * @date 2021-07-12 0:11
  */
-@WebServlet("/demo03")
+@WebServlet({"/demo03", "*.test"})
 public class ServletDemo03 extends HttpServlet {
 
     @Override
