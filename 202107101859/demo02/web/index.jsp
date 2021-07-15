@@ -12,5 +12,6 @@
   </head>
   <body>
   $END$
+  <a href="./demo05">获取referer</a>
   </body>
 </html>
