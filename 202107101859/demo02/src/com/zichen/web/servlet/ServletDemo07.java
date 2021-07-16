@@ -18,6 +18,8 @@ public class ServletDemo07 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("demo07访问");
+        // 存储数据到request域中
+        req.setAttribute("username", "张三");
         // 请求转发
         req.getRequestDispatcher("/demo08").forward(req, resp);
     }

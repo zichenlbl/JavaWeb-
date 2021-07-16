@@ -8,7 +8,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+import static javax.swing.text.html.CSS.getAttribute;
+
 /**
+ * request域数据共享一次请求(转发)
  * @author zc
  * @date 2021-07-16 11:05
  */
@@ -17,6 +20,8 @@ public class ServletDemo08 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("demo08访问");
+        Object username = req.getAttribute("username");
+        System.out.println(username);
     }
 
     @Override
