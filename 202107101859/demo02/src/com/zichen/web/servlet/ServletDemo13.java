@@ -10,29 +10,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * ServletContext 获取MIME类型
- * ServletContext 共享数据 设置数据
+ * ServletContext 共享数据 获取数据
  * @author zc
  * @date 2021-07-16 19:10
  */
-@WebServlet("/demo12")
-public class ServletDemo12 extends HttpServlet {
+@WebServlet("/demo13")
+public class ServletDemo13 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1.通过 request 对象获取
         ServletContext context = req.getServletContext();
-        // 2.通过 HttpServlet 获取
-        ServletContext context1 = this.getServletContext();
-        // true
-        System.out.println(context == context1);
-        // 定义文件名称
-        String filename = "test.jpg";
-        // 获取MIME类型
-        String mimeType = context.getMimeType(filename);
-        // image/jpeg
-        System.out.println(mimeType);
-        // 域对象 共享数据 整个Web应用
-        context.setAttribute("username", "王五");
+        // 2.域对象 共享数据 整个应用
+        Object username = context.getAttribute("username");
+        System.out.println(username);
     }
 
     @Override
