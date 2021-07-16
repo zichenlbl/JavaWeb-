@@ -22,6 +22,8 @@ public class ServletDemo08 extends HttpServlet {
         System.out.println("demo08访问");
         Object username = req.getAttribute("username");
         System.out.println(username);
+        // 重定向也可以跳转到其他网址
+        resp.sendRedirect("https://www.hujinya.com");
     }
 
     @Override

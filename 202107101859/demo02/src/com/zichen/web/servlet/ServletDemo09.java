@@ -20,10 +20,13 @@ public class ServletDemo09 extends HttpServlet {
         // 重定向两次请求 使用请求域传递参数获取不到 username=李四
         req.setAttribute("username", "李四");
         System.out.println("demo09访问");
+        // 动态获取虚拟目录
+        String contextPath = req.getContextPath();
+        System.out.println(contextPath);
         // 重定向方法1 访问demo09会自动跳转到demo08
 //        redirect(resp);
         // 重定向方法2
-        resp.sendRedirect("/demo08");
+        resp.sendRedirect( contextPath+ "/demo08");
     }
 
     @Override
