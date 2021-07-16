@@ -12,6 +12,11 @@
   </head>
   <body>
   $END$
+  <br/>
   <a href="./demo05">获取referer</a>
+  <br/>
+  <a href="./demo14?filename=test中文名.jpg">下载图片</a>
+  <br/>
+  <a href="./demo14?filename=test中文名.flv">下载视频</a>
   </body>
 </html>
