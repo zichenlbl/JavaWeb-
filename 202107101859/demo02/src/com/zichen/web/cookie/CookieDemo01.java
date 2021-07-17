@@ -13,6 +13,7 @@ import java.net.URLEncoder;
 /**
  * Cookie 快速入门
  * cookie中存中文数据
+ * cookie共享
  * @author zc
  * @date 2021-07-17 18:57
  */
@@ -27,6 +28,10 @@ public class CookieDemo01 extends HttpServlet {
         Cookie cookie1 = new Cookie("code", name);
         // 设置Cookie保存在本地的时间 负数：默认 正数：存活时间(秒) 零：删除cookie参数
         cookie.setMaxAge(60);
+        // 一个tomcat服务器中，部署了多个web项目,共享cookie
+        cookie.setPath("/");
+        // 不同的tomcat服务器间cookie共享 设置一级域名，相同的一级域名之间的cookie可以共享
+        cookie.setDomain(".baidu.com");
         // 2.发送Cookie
         resp.addCookie(cookie);
         resp.addCookie(cookie1);
