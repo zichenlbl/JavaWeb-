@@ -16,10 +16,9 @@ public class FilterDemo01 implements Filter {
     /**
      * 在服务器启动后，会创建Filter对象，然后调用init方法。只执行一次 用于加载资源
      * @param  filterConfig filterConfig
-     * @throws ServletException ServletException
      */
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
         System.out.println("init...");
     }
 
