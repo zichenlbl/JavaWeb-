@@ -28,9 +28,9 @@ public class ListenerDemo01 implements ServletContextListener {
         // ServletContext 对象创建后一般用来加载资源文件 全局资源文件
         // 1.获取 ServletContext 对象
         ServletContext servletContext = sce.getServletContext();
-        // 2.加载资源
+        // 2.加载资源 /WEB-INF/classes/contextConfig.xml
         String contextConfig = servletContext.getInitParameter("contextConfig");
-        // 3.获取真实路径
+        // 3.获取真实路径 JavaWeb-Basics\202107101859\javaee\out\artifacts\demo02_war_exploded\WEB-INF\classes\contextConfig.xml
         String realPath = servletContext.getRealPath(contextConfig);
         // 4.加载进内存
         try {
