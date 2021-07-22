@@ -20,7 +20,7 @@ public class JedisPoolUtils {
     /**
      * 连接池对象
      */
-    private static final JedisPool jedisPool;
+    private static final JedisPool JEDIS_POOL;
 
     static {
         // 1.读取配置文件
@@ -38,7 +38,7 @@ public class JedisPoolUtils {
         jedisPoolConfig.setMaxIdle(Integer.parseInt(properties.getProperty("maxTotal")));
         jedisPoolConfig.setMaxIdle(Integer.parseInt(properties.getProperty("maxIdle")));
         // 5.初始化 JedisPool
-        jedisPool = new JedisPool(jedisPoolConfig, properties.getProperty("host"), Integer.parseInt(properties.getProperty("port")));
+        JEDIS_POOL = new JedisPool(jedisPoolConfig, properties.getProperty("host"), Integer.parseInt(properties.getProperty("port")));
     }
 
     /**
@@ -46,7 +46,7 @@ public class JedisPoolUtils {
      * @return 连接对象
      */
     public static Jedis getJedis() {
-        return jedisPool.getResource();
+        return JEDIS_POOL.getResource();
     }
 
 }
