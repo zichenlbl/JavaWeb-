@@ -40,7 +40,7 @@ public class ReflectDemo05 {
      * 实例化对象
      * @param className 对象全类名
      */
-    private static void instantiateObject(String className) {
+    protected static void instantiateObject(String className) {
 
         try {
             // 通过反射机制实例化对象
